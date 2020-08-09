@@ -1,0 +1,12 @@
+- Abstract out logic from 'Level' into ShadowDefend so that only instances
+ of the game are passed between classes
+- Rejig Slicer spawning to list format with dynamic add/remove DONE :)
+- Fix up Timekeeper class to not include 'enemy' terminology
+-Remove or refactor subfolders in src directory
+-Look into fixing 0 vs 1 offset issues in waveset and wave
+- Move slicers into level class
+- fix up vector vs point discrepancies
+- Add in exclusive targeting
+Idea for level class: ideally would have one broad arraylist of gameobjects, 
+containing slicers, towers, projectiles, everything so that the update call is just a single for loop, but also have getter functions to be 
+able to pull out those same game objects but grouped into their respective classes

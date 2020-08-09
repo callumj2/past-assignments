@@ -1,0 +1,40 @@
+function precedence(operator)
+	if operator is '+' or '-' then
+		return 0
+	if operator is '*' or '/' then
+		return 1
+	if operator is '(' or ')' then
+		return 2
+
+function operate(operator, operand1, operand2)
+	return (operand1 (operator) operand2 )
+// eg. running operate('*', 3, 3) will return 9
+
+function evaluate_alg(expression)
+
+	for char in expression do
+		if char is a number then
+			valStack.push(char)
+
+		elseIf char is '(' then
+			opStack.push(char)
+
+		elseIf char is ')' then 
+		// a closing parenthesis indicates we need to operate on the value Stack until reach the end of the instructions inside the parentheses
+		
+			if there is more than one token in both the operator Stack and the valueStack then
+				topOperator <-- opStack.pop()
+				while topOperator is not '('
+					if size(valStack) < 2
+						return NOTWELLFORMED
+					operand1 = valStack.pop()
+					operand2 = valStack.pop()
+					result = operate(topOperator, operand2, operand1)
+					valStack.push(result)
+					topOperator = opStack.pop()
+			else
+				return NOTWELLFORMED
+		
+		elseIf char is an operator then
+			if opStack is empty and valStack
+			
